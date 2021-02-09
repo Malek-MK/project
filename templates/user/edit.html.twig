@@ -1,0 +1,21 @@
+{% extends 'template1.html.twig' %}
+
+{% block title %}Edit User{% endblock %}
+
+{% block body %}
+    <div class="container">
+    <div class="panel panel-primary">
+    <div class="panel-heading">
+    <i ></i><h2>Edit user</h2>
+</div>
+<div class="panel-body"> 
+
+    {{ include('user/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('user_index') }}">back to list</a>
+
+    
+    </div>
+    </div>
+    </div>
+{% endblock %}

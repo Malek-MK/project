@@ -1,0 +1,70 @@
+{% extends 'template1.html.twig' %}
+
+{% block title %}Fournisseur{% endblock %}
+
+{% block body %}
+    <div class="container">
+    <div class="panel panel-primary">
+    <div class="panel-heading">
+    <i ></i><h2>Fournisseur</h2>
+</div>
+<div class="panel-body"> 
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ fournisseur.id }}</td>
+            </tr>
+            <tr>
+                <th>Code</th>
+                <td>{{ fournisseur.code }}</td>
+            </tr>
+            <tr>
+                <th>Libelle</th>
+                <td>{{ fournisseur.libelle }}</td>
+            </tr>
+            <tr>
+                <th>Responsable</th>
+                <td>{{ fournisseur.responsable }}</td>
+            </tr>
+            <tr>
+                <th>Adresse</th>
+                <td>{{ fournisseur.adresse }}</td>
+            </tr>
+            <tr>
+                <th>Ville</th>
+                <td>{{ fournisseur.ville }}</td>
+            </tr>
+            <tr>
+                <th>Tel</th>
+                <td>{{ fournisseur.tel }}</td>
+            </tr>
+            <tr>
+                <th>Portable</th>
+                <td>{{ fournisseur.portable }}</td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td>{{ fournisseur.email }}</td>
+            </tr>
+            <tr>
+                <th>Matfisc</th>
+                <td>{{ fournisseur.matfisc }}</td>
+            </tr>
+            <tr>
+                <th>Cin</th>
+                <td>{{ fournisseur.cin }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('fournisseur_index') }}">back to list</a>
+
+    >
+
+    
+    </div>
+    </div>
+    </div>
+{% endblock %}

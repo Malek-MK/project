@@ -1,0 +1,46 @@
+{% extends 'template1.html.twig' %}
+
+{% block title %}Reglement{% endblock %}
+
+{% block body %}
+    <div class="container">
+    <div class="panel panel-primary">
+    <div class="panel-heading">
+    <i ></i><h2>Reglement</h2>
+</div>
+<div class="panel-body"> 
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ reglement.id }}</td>
+            </tr>
+            <tr>
+                <th>Modereg</th>
+                <td>{{ reglement.modereg }}</td>
+            </tr>
+            <tr>
+                <th>Montant</th>
+                <td>{{ reglement.montant }}</td>
+            </tr>
+            <tr>
+                <th>Numpiece</th>
+                <td>{{ reglement.numpiece }}</td>
+            </tr>
+            <tr>
+                <th>Echeance</th>
+                <td>{{ reglement.echeance }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('reglement_index') }}">back to list</a>
+
+    
+
+    
+    </div>
+    </div>
+    </div>
+{% endblock %}

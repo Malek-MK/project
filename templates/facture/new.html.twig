@@ -1,0 +1,19 @@
+{% extends 'template1.html.twig' %}
+
+{% block title %}New Facture{% endblock %}
+
+{% block body %}
+    <div class="container">
+    <div class="panel panel-primary">
+    <div class="panel-heading">
+    <i ></i><h2>Create new facture</h2>
+</div>
+<div class="panel-body"> 
+
+    {{ include('facture/_form.html.twig') }}
+
+    <a href="{{ path('facture_index') }}">back to list</a>
+    </div>
+    </div>
+    </div>
+{% endblock %}

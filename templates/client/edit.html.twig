@@ -1,0 +1,25 @@
+{% extends 'template1.html.twig' %}
+
+{% block title %}Edit Client{% endblock %}
+
+{% block body %}
+     <div class="container">
+    <div class="panel panel-primary">
+    <div class="panel-heading">
+    <i class="icon_menu"></i><h2>Edit Client</h2>
+</div>
+
+<div class="panel-body"> 
+
+    {{ include('client/_form.html.twig', {'button_label': 'Update'}) }}
+
+    
+
+
+    <a href="{{ path('client_index') }}">back to list</a>
+
+    
+</div>
+</div>
+</div>
+{% endblock %}

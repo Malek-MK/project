@@ -1,0 +1,108 @@
+{% extends 'template1.html.twig' %}
+
+{% block title %}New Commande{% endblock %}
+
+{% block body %}
+<form action="" method="post">
+<div class="container">
+<div class="panel panel-primary">
+<div class="panel-heading">
+<i ></i><h2>Gestion Commande</h2>
+</div>
+<div class="panel-body">
+<table class="table-condensed">
+<tr>
+<td>Numéro commande :</td>
+<td>{{numcom}}</td>
+<td>Date Commande :</td>
+<td>{{ form_widget(form.date) }}</td>
+</tr>
+<tr>
+<td>Client :</td>
+<td>{{ form_widget(form.id_client) }}</td>
+</tr>
+<tr>
+<td>Observation :</td>
+<td>{{ form_widget(form.obs) }}</td>
+</tr>
+</table>
+<table class="table table-condensed">
+<thead class="thead-dark">
+<th class="col-md-1">Produit</th>
+<th class="col-md-1">Prix_Unitaire</th>
+<th class="col-md-1">Quantité</th>
+<th class="col-md-1">TauxVA</th>
+<th class="col-md-1">Mont_Ht</th>
+<th class="col-md-1">Action</th>
+<tr>   
+<td class="col-md-1">
+{{ form_widget(f.id_produit) }}
+</td>
+<td class="col-md-1">  
+{{ form_widget(f.pu) }}
+</td>
+<td class="col-md-1">  
+{{ form_widget(f.qte) }}
+</td>
+<td class="col-md-1">  
+{{ form_widget(f.tva) }}
+</td>
+<td class="col-md-1">  
+{{ montht }}
+</td>
+<td class="col-md-1">  
+<input type="submit" value="Add" name="bt" class="btn btn-warning">
+</td>
+</tr>
+</thead>
+</table>
+<table class="table table-condensed">
+<thead class="thead-dark">
+<tr>
+<th class="col-md-1">Ligne</th>
+<th class="col-md-1">Désignation_Article</th>
+<th class="col-md-1">Prix_Unitaire</th>
+<th class="col-md-1">Quantité</th>
+<th class="col-md-1">TauxVA</th>
+<th class="col-md-1">Mont_Ht</th>
+<th class="col-md-1">Actions</th>
+</tr>
+</thead>
+<tbody>
+{% for t in lcomm %}
+<tr>
+<td class="col-md-1">{{ t.lig}}</td>
+<td class="col-md-1">{{ t.getIdproduit().libelle}}</td>
+<td class="col-md-1">{{ t.pu}}</td>
+<td class="col-md-1">{{ t.qte}}</td>
+<td class="col-md-1">{{ t.tva}}</td>
+<td class="col-md-1">{{ t.qte*t.pu}}</td>
+<td class="col-md-1">
+<a href="{{ path('supprime',{'id':t.lig }) }}" class="btn btn-danger">
+<i class="glyphicon glyphicon-apple"></i>supprimer</a></td>
+{% set tht = tht + (t.pu * t.qte) %}
+{% set ttva = ttva + (((t.pu * t.qte)*t.tva)*0.01) %}
+{% set tttc = tttc + (( (t.pu * t.qte)*(100+t.tva))*0.01) %}
+{% endfor %}
+</tbody>
+</table>
+
+
+<tfoot>
+<table class="table table-condensed">
+<tr>
+<td class="col-md-2"><b>Tot_Ht :</b></td>
+<td class="col-md-2">{{tht}}</td>
+<td class="col-md-2"><b>Tot_Tva_:</b></td>
+<td class="col-md-2">{{ttva}}</td>
+<td class="col-md-2"><b>Tot_TTC_:</b></td>
+<td class="col-md-2">{{tttc}}</td>
+</tr>
+ </table>
+</tfoot>
+<input type="submit" value="Save" name="bt" class="btn btn-success"> <i class="glyphicon glyphicon-save"></i><br>
+  </form>  <a href="{{ path('commande_index') }}">back to list</a>
+</div>
+</div>
+</div>
+{% endblock %}

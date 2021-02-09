@@ -1,0 +1,90 @@
+{% extends 'template1.html.twig' %}
+
+{% block title %}Facture{% endblock %}
+
+{% block body %}
+    <div class="container">
+    <div class="panel panel-primary">
+    <div class="panel-heading">
+    <i ></i><h2>Facture</h2>
+</div>
+<div class="panel-body"> 
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ facture.id }}</td>
+            </tr>
+            <tr>
+                <th>Base0</th>
+                <td>{{ facture.base0 }}</td>
+            </tr>
+            <tr>
+                <th>Base1</th>
+                <td>{{ facture.base1 }}</td>
+            </tr>
+            <tr>
+                <th>Tva1</th>
+                <td>{{ facture.tva1 }}</td>
+            </tr>
+            <tr>
+                <th>Base2</th>
+                <td>{{ facture.base2 }}</td>
+            </tr>
+            <tr>
+                <th>Tva2</th>
+                <td>{{ facture.tva2 }}</td>
+            </tr>
+            <tr>
+                <th>Base3</th>
+                <td>{{ facture.base3 }}</td>
+            </tr>
+            <tr>
+                <th>Tva3</th>
+                <td>{{ facture.tva3 }}</td>
+            </tr>
+            <tr>
+                <th>Totht</th>
+                <td>{{ facture.totht }}</td>
+            </tr>
+            <tr>
+                <th>Totrem</th>
+                <td>{{ facture.totrem }}</td>
+            </tr>
+            <tr>
+                <th>Tottva</th>
+                <td>{{ facture.tottva }}</td>
+            </tr>
+            <tr>
+                <th>Timbre</th>
+                <td>{{ facture.timbre }}</td>
+            </tr>
+            <tr>
+                <th>Tottc</th>
+                <td>{{ facture.tottc }}</td>
+            </tr>
+            <tr>
+                <th>Rs</th>
+                <td>{{ facture.rs }}</td>
+            </tr>
+            <tr>
+                <th>Montrs</th>
+                <td>{{ facture.montrs }}</td>
+            </tr>
+            <tr>
+                <th>Net</th>
+                <td>{{ facture.net }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('facture_index') }}">back to list</a>
+
+    
+
+    
+    </div>
+    </div>
+    </div>
+{% endblock %}

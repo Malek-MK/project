@@ -1,0 +1,41 @@
+{% extends 'template1.html.twig' %}
+
+{% block body %}
+
+<body class="hold-transition register-page">
+<form action="" method="post">
+<div class="register-box>
+<div class="register-logo>
+<center><img src="{{ asset('assets/dist/img/login.png')}}" 
+class="img-circle" alt="Logo" width="250" height="250"></center>
+</div>
+<div class="register-box>
+<table class="table-condensed">
+<tr>
+<td>Login :</td>
+<td>{{ form_widget(form.login) }}</td>
+</tr>
+<tr>
+<td>Password :</td>
+<td>{{ form_widget(form.pwd) }}</td>
+</tr>
+</table>
+<label class="checkbox">
+                <input type="checkbox" value="remember-me"> Remember me
+               <br> <span > <a href="#"> Forgot Password?</a></span>
+            </label>
+<div class="social-auth-links text-center">
+
+        <center><button class="btn btn-primary btn-lg btn-block" type="submit" style="width: 350px;border-radius: 16px;">Login</button>
+        <button class="btn btn-info btn-lg btn-block" type="submit" style="width: 350px;border-radius: 16px;">Signup</button>
+</center>
+<p style="text-align:center">- OR -</p>
+
+<div style="text-align:center"> 
+<a href="{{ path('user_new') }}"
+ class="text-center">I don't have a membership</a>
+ </div>
+</div>
+</div>
+</div>
+{%endblock%}

@@ -1,0 +1,42 @@
+{% extends 'template.html.twig' %}
+
+{% block title %}Lcommande index{% endblock %}
+
+{% block body %}
+    <h1>Lcommande index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Numc</th>
+                <th>Pv</th>
+                <th>Qte</th>
+                <th>Tva</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for lcommande in lcommandes %}
+            <tr>
+                <td>{{ lcommande.id }}</td>
+                <td>{{ lcommande.numc }}</td>
+                <td>{{ lcommande.pv }}</td>
+                <td>{{ lcommande.qte }}</td>
+                <td>{{ lcommande.tva }}</td>
+                <td>
+                    <a href="{{ path('lcommande_show', {'id': lcommande.id}) }}" class="btn btn-success">show</a>
+                    <a href="{{ path('lcommande_edit', {'id': lcommande.id}) }}" class="btn btn-warning">edit</a>
+                    {{ include('lcommande/_delete_form.html.twig') }}
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('lcommande_new') }}" class="btn btn-info">Create new</a>
+{% endblock %}

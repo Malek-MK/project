@@ -1,0 +1,61 @@
+{% extends 'template1.html.twig' %}
+
+{% block title %}Produit{% endblock %}
+
+{% block body %}
+    <div class="container">
+    <div class="panel panel-primary">
+    <div class="panel-heading">
+    <i ></i><h2>Produit </h2>
+</div>
+<div class="panel-body">
+
+    <table class="table table_condensed">
+    <thead class="thead-dark">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ produit.id }}</td>
+            </tr>
+            <tr>
+                <th>Libelle</th>
+                <td>{{ produit.libelle }}</td>
+            </tr>
+
+            <tr>
+                <th>Image</th>
+                <td><img src ="{{ asset('uploads/images/' ~ produit.image) }}"
+   alt =""  width="100" height="100"></td>
+            </tr>
+
+            <tr>
+                <th>Pa</th>
+                <td>{{ produit.pa }}</td>
+            </tr>
+            <tr>
+                <th>Pv</th>
+                <td>{{ produit.pv }}</td>
+            </tr>
+            <tr>
+                <th>Tva</th>
+                <td>{{ produit.tva }}</td>
+            </tr>
+            <tr>
+                <th>Stock</th>
+                <td>{{ produit.stock }}</td>
+            </tr>
+            <tr>
+                <th>Stkinit</th>
+                <td>{{ produit.stkinit }}</td>
+            </tr>
+        </tbody>
+        </thead>
+    </table>
+
+    
+        <a href="{{ path('produit_index') }}">back to list</a>
+
+</div>
+</div>
+</div>
+{% endblock %}

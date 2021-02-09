@@ -1,0 +1,50 @@
+{% extends 'template1.html.twig' %}
+
+{% block title %}Reglement index{% endblock %}
+
+{% block body %}
+    <div class="container">
+    <div class="panel panel-primary">
+    <div class="panel-heading">
+    <i ></i><h2>Liste reglement</h2>
+</div>
+<div class="panel-body"> 
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Modereg</th>
+                <th>Montant</th>
+                <th>Numpiece</th>
+                <th>Echeance</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for reglement in reglements %}
+            <tr>
+                <td>{{ reglement.id }}</td>
+                <td>{{ reglement.modereg }}</td>
+                <td>{{ reglement.montant }}</td>
+                <td>{{ reglement.numpiece }}</td>
+                <td>{{ reglement.echeance }}</td>
+                <td>
+                    <a href="{{ path('reglement_show', {'id': reglement.id}) }}"class = "btn btn-success">show</a><br>
+                    <a href="{{ path('reglement_edit', {'id': reglement.id}) }}" class = "btn btn-warning">edit</a>
+                    {{ include('reglement/_delete_form.html.twig') }}
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('reglement_new') }}"class = "btn btn-info">Create new</a>
+</div>
+</div>
+</div>
+{% endblock %}

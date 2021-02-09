@@ -1,0 +1,22 @@
+{% extends 'template1.html.twig' %}
+
+{% block title %}New Produit{% endblock %}
+
+{% block body %}
+   <div class="container">
+    <div class="panel panel-primary">
+    <div class="panel-heading">
+    <i ></i><h2>Create New Produit</h2>
+</div>
+<div class="panel-body">
+
+    {{ form_start(form) }}
+    {{ form_widget(form) }}
+    <button class="btn btn-success">{{ button_label|default('Save') }}</button>
+{{ form_end(form) }}
+
+    <a href="{{ path('produit_index') }}">back to list</a>
+</div>
+</div>
+</div>
+{% endblock %}

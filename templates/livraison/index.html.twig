@@ -1,0 +1,58 @@
+{% extends 'template1.html.twig' %}
+
+{% block title %}Livraison index{% endblock %}
+
+{% block body %}
+    <div class="container">
+    <div class="panel panel-primary">
+    <div class="panel-heading">
+    <i ></i><h2>Liste livraison</h2>
+</div>
+<div class="panel-body"> 
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Numl</th>
+                <th>Client</th>
+                <th>Dateliv</th>
+                <th>Observation</th>
+                <th>Totht</th>
+                <th>Tottva</th>
+                <th>Totttc</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for livraison in livraisons %}
+            <tr>
+                <td>{{ livraison.id }}</td>
+                <td>{{ livraison.numl }}</td>
+                <td>{{ livraison.client.designation }}</td>
+                <td>{{ livraison.Dateliv ? livraison.Dateliv|date('Y-m-d') : '' }}</td>
+                <td>{{ livraison.observation }}</td>
+                <td>{{ livraison.totht }}</td>
+                <td>{{ livraison.tottva }}</td>
+                <td>{{ livraison.totttc }}</td>
+                <td>
+                    
+                    <a href="{{ path('livraison_show', {'id': livraison.id}) }}"class="btn btn-success">show</a>
+                   <br>
+                    <a href="{{ path('livraison_edit', {'id': livraison.id}) }}"class="btn btn-warning">edit</a>
+                    {{ include('livraison/_delete_form.html.twig') }}
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="9">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('livraison_new') }}"class = "btn btn-info">Create new</a>
+    </div>
+    </div>
+    </div>
+{% endblock %}

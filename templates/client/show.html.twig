@@ -1,0 +1,74 @@
+{% extends 'template1.html.twig' %}
+
+{% block title %}Client{% endblock %}
+
+{% block body %}
+   <div class="container">
+    <div class="panel panel-primary">
+    <div class="panel-heading">
+    <i class="icon_menu"></i><h2>Client</h2>
+</div>
+<div class="panel-body"> 
+
+    <table class="table table_condensed">
+    <thead class="thead-dark">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ client.id }}</td>
+            </tr>
+            <tr>
+                <th>Designation</th>
+                <td>{{ client.designation }}</td>
+            </tr>
+            <tr>
+                <th>RespComm</th>
+                <td>{{ client.RespComm }}</td>
+            </tr>
+            <tr>
+                <th>RespFinan</th>
+                <td>{{ client.respFinan }}</td>
+            </tr>
+            <tr>
+                <th>AdrLiv</th>
+                <td>{{ client.adrLiv }}</td>
+            </tr>
+            <tr>
+                <th>AdrFacture</th>
+                <td>{{ client.adrFacture }}</td>
+            </tr>
+            <tr>
+                <th>Tel</th>
+                <td>{{ client.tel }}</td>
+            </tr>
+            <tr>
+                <th>Portable</th>
+                <td>{{ client.portable }}</td>
+            </tr>
+            <tr>
+                <th>Fax</th>
+                <td>{{ client.fax }}</td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td>{{ client.email }}</td>
+            </tr>
+            <tr>
+                <th>SoldeInit</th>
+                <td>{{ client.soldeInit }}</td>
+            </tr>
+            <tr>
+                <th>Solde</th>
+                <td>{{ client.solde }}</td>
+            </tr>
+        </tbody>
+        </thead>
+    </table>
+    
+  
+        <a href="{{ path('client_index') }}">back to list</a>
+
+</div>
+</div>
+</div>
+{% endblock %}
